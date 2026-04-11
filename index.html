@@ -243,7 +243,16 @@ footer a{color:var(--cyan);text-decoration:none}
 @keyframes blink{0%,100%{opacity:1;box-shadow:0 0 6px var(--cyan)}50%{opacity:.3;box-shadow:none}}
 
 @media(max-width:920px){
-  .results-grid,.contrib-grid,.edge-grid,.demo-body,.authors-grid{grid-template-columns:1fr}
+  .results-grid,.contrib-grid,.edge-grid,.demo-body{grid-template-columns:1fr}
+  .authors-grid{
+    grid-template-columns:repeat(3,minmax(220px,1fr));
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding-bottom:.5rem;
+    scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;
+  }
+  .author-card{scroll-snap-align:start}
   .demo-panel{border-right:none;border-bottom:1px solid var(--border)}
   .demo-panel:last-child{border-bottom:none}
   .stat-strip{grid-template-columns:repeat(2,1fr)}
@@ -266,7 +275,7 @@ footer a{color:var(--cyan);text-decoration:none}
     <a href="#demo">Demo</a>
     <a href="#results">Results</a>
     <a href="#authors">Authors</a>
-    <a href="../Paper/CCS26/GuardNet.pdf" class="nav-paper" target="_blank">Paper</a>
+    <a href="https://arxiv.org/pdf/2509.23037" class="nav-paper" target="_blank" rel="noopener noreferrer">Paper</a>
   </div>
 </nav>
 
@@ -280,7 +289,7 @@ footer a{color:var(--cyan);text-decoration:none}
       <p class="hero-sub">A pre-inference filter that builds hybrid token graphs, flags adversarial prompts at the prompt level, localizes malicious spans at the token level, and only then forwards safe or sanitized input to the target LLM.</p>
       <div class="hero-authors"><b>Javad Forough</b> &nbsp;&middot;&nbsp; <b>Mohammad M Maheri</b> &nbsp;&middot;&nbsp; <b>Hamed Haddadi</b> &nbsp;&middot;&nbsp; Imperial College London</div>
       <div class="hero-btns">
-        <a href="../Paper/CCS26/GuardNet.pdf" class="btn btn-cyan" target="_blank">Read paper</a>
+        <a href="https://arxiv.org/pdf/2509.23037" class="btn btn-cyan" target="_blank" rel="noopener noreferrer">Read paper</a>
         <a href="#demo" class="btn btn-ghost">Interactive demo</a>
         <a href="#results" class="btn btn-ghost">View results</a>
       </div>
@@ -541,7 +550,7 @@ footer a{color:var(--cyan);text-decoration:none}
 </section>
 
 <footer>
-  <div class="container">GuardNet &nbsp;&middot;&nbsp; Imperial College London &nbsp;&middot;&nbsp; <a href="../Paper/CCS26/GuardNet.pdf" target="_blank">Full paper</a> &nbsp;&middot;&nbsp; <a href="#authors">Authors</a></div>
+  <div class="container">GuardNet &nbsp;&middot;&nbsp; Imperial College London &nbsp;&middot;&nbsp; <a href="https://arxiv.org/pdf/2509.23037" target="_blank" rel="noopener noreferrer">Full paper</a> &nbsp;&middot;&nbsp; <a href="#authors">Authors</a></div>
 </footer>
 
 <script>
