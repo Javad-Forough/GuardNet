@@ -61,10 +61,22 @@ nav.scrolled{background:rgba(6,10,18,.92);backdrop-filter:blur(16px);border-bott
   opacity:0;transform:translateY(12px);animation:fadeup .7s .58s forwards
 }
 .hero-authors{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
   font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);margin-bottom:2.25rem;
   opacity:0;animation:fadeup .7s .72s forwards
 }
 .hero-authors b{color:var(--muted2)}
+.hero-author-stack{display:flex;align-items:center}
+.hero-author-stack img{
+  width:42px;height:42px;border-radius:50%;object-fit:cover;display:block;
+  border:2px solid rgba(6,10,18,.92);margin-left:-10px;
+  box-shadow:0 12px 24px rgba(0,0,0,.24)
+}
+.hero-author-stack img:first-child{margin-left:0}
+.hero-author-javad{object-position:center 20%}
+.hero-author-maheri{object-position:center 14%}
+.hero-author-hamed{object-position:center 12%}
+.hero-author-text{display:flex;flex-wrap:wrap}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeup .7s .86s forwards}
 
 .btn{
@@ -287,7 +299,14 @@ footer a{color:var(--cyan);text-decoration:none}
       <h1><em>GuardNet</em></h1>
       <p class="hero-title-sub">Unified Graph-Attention Defense for Jailbreak and Prompt-Leakage Attacks</p>
       <p class="hero-sub">A pre-inference filter that builds hybrid token graphs, flags adversarial prompts at the prompt level, localizes malicious spans at the token level, and only then forwards safe or sanitized input to the target LLM.</p>
-      <div class="hero-authors"><b>Javad Forough</b> &nbsp;&middot;&nbsp; <b>Mohammad M Maheri</b> &nbsp;&middot;&nbsp; <b>Hamed Haddadi</b> &nbsp;&middot;&nbsp; Imperial College London</div>
+      <div class="hero-authors">
+        <div class="hero-author-stack" aria-hidden="true">
+          <img class="hero-author-javad" src="assets/javad.jpg" alt="">
+          <img class="hero-author-maheri" src="assets/Maheri.jpg" alt="">
+          <img class="hero-author-hamed" src="assets/hamed.jpg" alt="">
+        </div>
+        <div class="hero-author-text"><b>Javad Forough</b> &nbsp;&middot;&nbsp; <b>Mohammad M Maheri</b> &nbsp;&middot;&nbsp; <b>Hamed Haddadi</b> &nbsp;&middot;&nbsp; Imperial College London</div>
+      </div>
       <div class="hero-btns">
         <a href="https://arxiv.org/pdf/2509.23037" class="btn btn-cyan" target="_blank" rel="noopener noreferrer">Read paper</a>
         <a href="#demo" class="btn btn-ghost">Interactive demo</a>
